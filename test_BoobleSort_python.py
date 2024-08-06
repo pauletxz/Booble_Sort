@@ -1,3 +1,26 @@
+from tkinter import *
+
+class Application:
+    def __init__(self, master=None):
+        
+        self.widget1 =Frame(master)
+        self.widget1.pack()
+        self.aluno = Label(self.widget1, text="Cadastros Alunos")
+        self.aluno["font"]= "Arial"
+        self.aluno.pack ()
+
+        self.sair = Button(self.widget1)
+        self.sair["text"] = "Sair"
+        self.sair["font"] = ("Calibri", "10")
+        self.sair["width"] = 5
+        self.sair["command"] = self.widget1.quit
+        self.sair.pack ()
+
+        pass
+root = Tk()
+Application(root)
+root.mainloop()
+
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
