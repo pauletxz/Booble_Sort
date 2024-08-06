@@ -1,14 +1,18 @@
 from tkinter import *
-
+# eu to so testando essa biblioteca que me indicaram,
+# para deixar deixar a apresentacao mais "vistosa",
+# e eu tenho fe que ela nao vai perguntar como usa essa bibleoteca que eu nao faca a minima ideia 
 class Application:
     def __init__(self, master=None):
         
+        # Aluno: Janela para melhorar a demonstracao das implementacoes 
         self.widget1 =Frame(master)
         self.widget1.pack()
         self.aluno = Label(self.widget1, text="Cadastros Alunos")
         self.aluno["font"]= "Arial"
         self.aluno.pack ()
-
+        
+        # Saida: Botao para encerrar o programa
         self.sair = Button(self.widget1)
         self.sair["text"] = "Sair"
         self.sair["font"] = ("Calibri", "10")
@@ -21,13 +25,15 @@ root = Tk()
 Application(root)
 root.mainloop()
 
-def bubble_sort(arr):
+# bubbleSort: Funcao de ordernacao
+# Ordena os nomes digitados pelo usuario em ordem alfabetica
+def bubbleSort(arr):
     n = len(arr)
     for i in range(n):
         for j in range(0, n-i-1):
             if arr[j].lower() > arr[j+1].lower():
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-
+# main: Por enquanto ela existe, mas por enquanto 
 def main():
     nomes = []
     while True:
