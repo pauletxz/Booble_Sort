@@ -1,56 +1,68 @@
 from tkinter import *
+import os
 
 class Application:
+
     def __init__(self, master=None):
-        
-        self.widget1 =Frame(master)
+        self.arr = []
+
+        self.widget1 = Frame(master)
         self.widget1.pack()
-        self.aluno = Label(self.widget1, text="Cadastros Alunos")
-        self.aluno["font"]= "Arial"
-        self.aluno.pack ()
 
-        self.sair = Button(self.widget1)
+        self.aluno = Label(self.widget1, text="Cadastro de Alunos")
+        self.aluno["font"] = ("Arial", 12)
+        self.aluno.pack(pady=10)
+
+        self.fontePadrao = ("Arial", 10)
+
+        self.entrada1 = Frame(master)
+        self.entrada1.pack(pady=10)
+
+        self.nomeLabel = Label(self.entrada1, text="Nome:", font=self.fontePadrao)
+        self.nomeLabel.pack(side=LEFT)
+
+        self.nomeEntry = Entry(self.entrada1, font=self.fontePadrao)
+        self.nomeEntry.pack(side=LEFT, padx=10)
+
+        self.cadastrar = Button(self.entrada1)
+        self.cadastrar["text"] = "Cadastrar"
+        self.cadastrar["width"] = 10
+        self.cadastrar["font"] = self.fontePadrao
+        self.cadastrar["command"] = self.cadastrarNome
+        self.cadastrar.pack(side=LEFT, padx=10)
+
+        self.sair = Button(master)
         self.sair["text"] = "Sair"
-        self.sair["font"] = ("Calibri", "10")
-        self.sair["width"] = 5
-        self.sair["command"] = self.widget1.quit
-        self.sair.pack ()
+        self.sair["font"] = ("Calibri", 10)
+        self.sair["width"] = 10
+        self.sair["command"] = master.destroy
+        self.sair.pack(pady=20)
 
-        pass
+    def cadastrarNome(self):
+        nome = self.nomeEntry.get()
+        if nome:  # Verifica se o campo não está vazio
+            self.adicionarNome(nome)
+            self.bubbleSort()
+            print("Nomes ordenados:", self.arr)
+            self.nomeEntry.delete(0, END)  # Limpa o campo de entrada após adicionar o nome
+            self.salvarNomes()  # Salva os nomes no arquivo de texto
+
+    def adicionarNome(self, nome):
+        self.arr.append(nome)
+
+    def bubbleSort(self):
+        n = len(self.arr)
+        for i in range(n):
+            for j in range(0, n-i-1):
+                if self.arr[j].lower() > self.arr[j+1].lower():
+                    self.arr[j], self.arr[j+1] = self.arr[j+1], self.arr[j]
+
+    def salvarNomes(self):
+        with open("nomes_cadastrados.txt", "w") as file:
+            for index, nome in enumerate(self.arr, start=1):
+                file.write(nome + "\n")
+
 root = Tk()
-Application(root)
+root.geometry("800x600")
+app = Application(root)
 root.mainloop()
-
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j].lower() > arr[j+1].lower():
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-
-def main():
-    nomes = []
-    while True:
-        nome = input("Digite o nome do aluno (ou 'fim' para terminar): ")
-        if nome.lower() == 'fim':
-            break
-        nomes.append(nome)
-    
-    bubble_sort(nomes)
-    
-    print("\nNomes dos alunos em ordem alfabética:")
-    for i, nome in enumerate(nomes, start=1):
-        print(f"{i}- {nome}")
-
-if __name__ == "__main__":
-    main()
-
-# TODO ei igor esse foi o melhor exemplo que eu pude pensar,
-#  é basicamente é um lista q voce vai digitar nomes aleatorios e so sera finalizada qunado a pessoa digitar "fim"
-#  e depois ele vai ordenar a lista em ordem alfabetica e vai exibir na tela
-
-#  se voce quiser mudar qualquer coisa pode mudar, so que deixa os comentarios que eu olho e tento entender oq foi feito, 
-# se quiser usar outra linguagem pode usar, so usei python pq é mais de boa para digitar.
-#  qualquer coisa coloca o codigo em algum conversor de linguagem ai pode trocar se tu achaar melhor
-
-# TODO lá no readme eu vou deixar uma breve explicacao para caso a nossa apresentancao continue assim.
