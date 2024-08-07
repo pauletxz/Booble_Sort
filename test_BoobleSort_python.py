@@ -1,12 +1,18 @@
 from tkinter import *
 import os
 
+# eu to so testando essa biblioteca que me indicaram,
+# para deixar deixar a apresentacao mais "vistosa",
+# e eu tenho fe que ela nao vai perguntar como usa essa bibleoteca que eu nao faca a minima ideia 
 class Application:
 
     def __init__(self, master=None):
         self.arr = []
 
         self.widget1 = Frame(master)
+        
+        # Aluno: Janela para melhorar a demonstracao das implementacoes 
+        self.widget1 =Frame(master)
         self.widget1.pack()
 
         self.aluno = Label(self.widget1, text="Cadastro de Alunos")
@@ -32,6 +38,12 @@ class Application:
         self.cadastrar.pack(side=LEFT, padx=10)
 
         self.sair = Button(master)
+        self.aluno = Label(self.widget1, text="Cadastros Alunos")
+        self.aluno["font"]= "Arial"
+        self.aluno.pack ()
+        
+        # Saida: Botao para encerrar o programa
+        self.sair = Button(self.widget1)
         self.sair["text"] = "Sair"
         self.sair["font"] = ("Calibri", 10)
         self.sair["width"] = 10
