@@ -1,9 +1,6 @@
 from tkinter import *
 import os
 
-# eu to so testando essa biblioteca que me indicaram,
-# para deixar deixar a apresentacao mais "vistosa",
-# e eu tenho fe que ela nao vai perguntar como usa essa bibleoteca que eu nao faca a minima ideia 
 class Application:
 
     def __init__(self, master=None):
@@ -14,10 +11,6 @@ class Application:
         # Aluno: Janela para melhorar a demonstracao das implementacoes 
         self.widget1 =Frame(master)
         self.widget1.pack()
-
-        self.aluno = Label(self.widget1, text="Cadastro de Alunos")
-        self.aluno["font"] = ("Arial", 12)
-        self.aluno.pack(pady=10)
 
         self.fontePadrao = ("Arial", 10)
 
