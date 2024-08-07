@@ -1,27 +1,29 @@
 from tkinter import *
 import os
 
+
 class Application:
 
     def __init__(self, master=None):
         self.arr = []
-
-        self.widget1 = Frame(master)
-        
-        # Aluno: Janela para melhorar a demonstracao das implementacoes 
+        # Aluno: Janela para melhorar a demonstracao das implementacoes
         self.widget1 =Frame(master)
-        self.widget1.pack()
+        self.widget1.pack(padx= "1" )
 
+        self.widget2 =Frame(master)
+        self.widget1.pack(padx= "120")
+
+ 
         self.fontePadrao = ("Arial", 10)
 
         self.entrada1 = Frame(master)
-        self.entrada1.pack(pady=10)
+        self.entrada1.pack(pady=120)
 
         self.nomeLabel = Label(self.entrada1, text="Nome:", font=self.fontePadrao)
         self.nomeLabel.pack(side=LEFT)
 
         self.nomeEntry = Entry(self.entrada1, font=self.fontePadrao)
-        self.nomeEntry.pack(side=LEFT, padx=10)
+        self.nomeEntry.pack(side=LEFT, padx=10, pady= 10)
 
         self.cadastrar = Button(self.entrada1)
         self.cadastrar["text"] = "Cadastrar"
@@ -33,15 +35,15 @@ class Application:
         self.sair = Button(master)
         self.aluno = Label(self.widget1, text="Cadastros Alunos")
         self.aluno["font"]= "Arial"
-        self.aluno.pack ()
-        
+        self.aluno.pack (side= "top",padx="120")
+
         # Saida: Botao para encerrar o programa
-        self.sair = Button(self.widget1)
+        self.sair = Button(self.widget2)
         self.sair["text"] = "Sair"
         self.sair["font"] = ("Calibri", 10)
         self.sair["width"] = 10
         self.sair["command"] = master.destroy
-        self.sair.pack(pady=20)
+        self.sair.pack()
 
     def cadastrarNome(self):
         nome = self.nomeEntry.get()
@@ -56,7 +58,8 @@ class Application:
         self.arr.append(nome)
 
     def bubbleSort(self):
-        n = len(self.arr)
+        # Fuução bubbleSort: Ordena os alunos 
+        n = len(self.arr) 
         for i in range(n):
             for j in range(0, n-i-1):
                 if self.arr[j].lower() > self.arr[j+1].lower():
@@ -68,6 +71,6 @@ class Application:
                 file.write(nome + "\n")
 
 root = Tk()
-root.geometry("800x600")
+root.geometry("1920x1080")
 app = Application(root)
 root.mainloop()

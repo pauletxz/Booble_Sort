@@ -10,10 +10,10 @@ Está função junto com a biblioteca Tkinter(Utilzida para criar a interface gr
                 if self.arr[j].lower() > self.arr[j+1].lower():
                     self.arr[j], self.arr[j+1] = self.arr[j+1], self.arr[j]
 
-## Participantes: 
+## Desenvolvedores: 
 
-1. Igor Cavalcante Rocha
-2. Paulo Henrique Souza Lima
+[Igor Cavalcante Rocha](https://github.com/Igor-C-Rocha)
+[Paulo Henrique Souza Lima](https://github.com/pauletxz)
 
 # Passos do Projeto
 
@@ -23,6 +23,7 @@ Está função junto com a biblioteca Tkinter(Utilzida para criar a interface gr
 4. Exibir a lista ordenada.
 
 ## Exemplificando o funcionamento do Bubble Sort 
+
 <p align="center">
  <img src="./imagens/BubbleSort_Exemplo.gif"/>
 </p>
