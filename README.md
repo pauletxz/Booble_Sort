@@ -1,4 +1,4 @@
-# Estruturas de Dados 1 
+# Estrutura de Ordenação Bubble Sort
 
 ## Função Bubble Sort :
 Está função junto com a biblioteca Tkinter(Utilzida para criar a interface grafica), cria um campo para o usuario cadastrar um aluno, e utilizado o método Bubble Sort, organiza os alunos cadastrados em ordem alfabetica:
