@@ -1,4 +1,4 @@
-import random
+import random 
 import bancoNomes  # Importa o módulo com as listas de nomes e sobrenomes
 
 # Função para gerar um número de telefone aleatório
@@ -9,7 +9,7 @@ def gerarTelefone():
 # Função para gerar contatos aleatórios com base no banco de nomes
 def gerarContatos():
     contatos = []
-    for _ in range(100):
+    for _ in range(10000):
         nome = f"{random.choice(bancoNomes.primeiroNome)} {random.choice(bancoNomes.sobrenome)} {random.choice(bancoNomes.segundoSobrenome)}"
         telefone = gerarTelefone()
         contatos.append({'nome': nome, 'telefone': telefone})

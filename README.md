@@ -1,23 +1,29 @@
-# Estrutura de Ordenação Bubble Sort
+## Lista Telefonica Organizada Utilizando BubbleSort
 
-## Desenvolvedores: 
+## Descrição
 
-[Igor Cavalcante Rocha](https://github.com/Igor-C-Rocha)
-[Paulo Henrique Souza Lima](https://github.com/pauletxz)
+## Passos do Projeto
 
-## Explicação
+1. Gerar uma lista telefonica randomicamente.
+2. Armazena a lista gerada em arquivo .txt.
+3. Ordenar a lista em ordem alfabética usando Bubble Sort.
+4. Reeorganiza o arquivo .txt
+
+## Como utilizar 
+1. Clone este repositório:
+    ```sh
+    git clone https://github.com/pauletxz/Booble_Sort
+    ```
+2. Execute o seguinte comando:
+    ```sh
+    python main.py
+    ```
 
 ## Calculo de complexidade 
 
-# Passos do Projeto
 
-[1. Gerar uma lista telefonica randomicamente.]()
-[2. Armazena a lista gerada em arquivo .txt.]()
-[3. Ordenar a lista em ordem alfabética usando Bubble Sort.]()
-[4. Reeorganiza o arquivo .txt]()
 
-## Função Bubble Sort :
-
+## Função Bubble Sort
      def bubbleSort(arr):
         n = len(arr)
         for i in range(n):
@@ -25,28 +31,14 @@
                 if arr[j].lower() > arr[j+1].lower():
                     arr[j], arr[j+1] = arr[j+1], arr[j]
         return arr
-## Função gerarListaContatos
-
-
-
-        def gerarTelefone():
-            return f"{random.randint(1000, 9999)}-{random.randint(1000, 9999)}"
-        
-
-
-        def gerarContantos():
-            contatos = []
-                for _ in range(10000):
-                     nome = f"{random.choice(primeiros_nomes)} {random.choice(sobrenomes)} {random.choice(segundoSobrenome)}"
-            telefone = gerarTelefone()
-            contatos.append({'nome': nome, 'telefone': telefone})
-        return contatos
-
-        
-
 
 ## Exemplificando o funcionamento do Bubble Sort 
 
 <p align="center">
  <img src="./anexos/BubbleSort_Exemplo.gif"/>
 </p>
+
+## Desenvolvedores: 
+
+[Igor Cavalcante Rocha](https://github.com/Igor-C-Rocha)
+[Paulo Henrique Souza Lima](https://github.com/pauletxz)
