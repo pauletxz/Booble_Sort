@@ -39,7 +39,9 @@
         return arr #1
       
  T(n) = 1 + 1+ (n+1) + (n+1)  * (n/2) + (n+1) * (n/2) +  (n+1) * (n/2) * 1
+
  T(n) = 3n^2/2 + 5n/2 + 3 
+ 
  O(n^2)  #Complexidade Quadrática
 ## Exemplificando o funcionamento do Bubble Sort 
 
