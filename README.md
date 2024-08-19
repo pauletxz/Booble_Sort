@@ -19,12 +19,8 @@
     python main.py
     ```
 
-## Calculo de complexidade 
-
-
-
 ## Função Bubble Sort
-     def bubbleSort(arr):
+     def bubbleSort(arr): 
         n = len(arr)
         for i in range(n):
             for j in range(0, n-i-1):
@@ -32,6 +28,19 @@
                     arr[j], arr[j+1] = arr[j+1], arr[j]
         return arr
 
+## Calculo de complexidade 
+    
+     def bubbleSort(arr): #1 
+        n = len(arr) #1 
+        for i in range(n): #n+1
+            for j in range(0, n-i-1): #(n+1) * (n/2)
+                if arr[j].lower() > arr[j+1].lower(): #(n+1) * (n/2) * 1
+                    arr[j], arr[j+1] = arr[j+1], arr[j] #(n+1) * (n/2) * 1
+        return arr #1
+      
+ T(n) = 1 + 1+ (n+1) + (n+1)  * (n/2) + (n+1) * (n/2) +  (n+1) * (n/2) * 1
+ T(n) = 3n^2/2 + 5n/2 + 3 
+ O(n^2)  #Complexidade Quadrática
 ## Exemplificando o funcionamento do Bubble Sort 
 
 <p align="center">
@@ -41,4 +50,5 @@
 ## Desenvolvedores: 
 
 [Igor Cavalcante Rocha](https://github.com/Igor-C-Rocha)
+
 [Paulo Henrique Souza Lima](https://github.com/pauletxz)
