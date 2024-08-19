@@ -9,7 +9,7 @@ def gerarTelefone():
 # Função para gerar contatos aleatórios com base no banco de nomes
 def gerarContatos():
     contatos = []
-    for _ in range(1000):
+    for _ in range(10000):
         nome = f"{random.choice(bancoNomes.primeiroNome)} {random.choice(bancoNomes.sobrenome)} {random.choice(bancoNomes.segundoSobrenome)}"
         telefone = gerarTelefone()
         contatos.append({'nome': nome, 'telefone': telefone})
