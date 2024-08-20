@@ -1,7 +1,7 @@
 ## Lista Telefonica Organizada Utilizando BubbleSort
 
 ## Descrição
-
+Neste projeto, criamos uma lista telefônica aleatória, armazenamos em um arquivo de texto e, em seguida, ordenamos em ordem alfabética usando o algoritmo Bubble Sort.
 ## Passos do Projeto
 
 1. Gerar uma lista telefonica randomicamente.
