@@ -42,9 +42,7 @@
 
  T(n) = 3n^2/2 + 5n/2 + 3 
  
- (O(n^2))  #Complexidade Quadrática
-
-# Melhor e pior caso
+ #### (O(n^2))  Complexidade Quadrática
  Quando a complexidade de tempo é (O(n^2)), tanto o melhor caso quanto o pior caso têm a mesma ordem de crescimento, ou seja, ambos são (n^2). Portanto, não há distinção significativa entre os dois cenários em termos de complexidade.
 
 ## Exemplificando o funcionamento do Bubble Sort 
